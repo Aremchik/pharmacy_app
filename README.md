@@ -1,1 +1,2 @@
-"# pharmacy_app" 
+npm install
+npm start
