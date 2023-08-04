@@ -14,9 +14,16 @@ export const PopularProduct = () => {
         {PopularData.map((button) => (
           <TouchableOpacity key={button.id} style={styles.button}>
             <View style={{alignItems: 'center',}}>
-            <Image
-                source={require('../../UI/img/Popular.png')}
-            />
+            <View style={{flexDirection:'row'}}>
+              <Image
+                  style={{width: 85.7, height: 50, marginLeft: 50, marginTop: '20%', marginBottom: '15%'}}
+                  source={require('../../UI/img/nurofenProd.png')}
+              />
+              <Image 
+                          style={{marginRight: 30, marginTop: 6}}
+                          source={require('../../UI/img/lovePng.png')}
+                      />
+            </View>
             </View>
             <Text style={[styles.text, styles.buttonTitleText]}>{button.title}</Text>
             <Text style={[styles.text, styles.buttonDescText]}>{button.description}</Text>
@@ -62,6 +69,7 @@ const styles = StyleSheet.create({
     buttonPriceText: {
         color: '#91D337',
         fontSize: 17,
-        marginTop: '5%'
+        marginTop: '20%',
+        fontWeight: 'bold'
     }
 })

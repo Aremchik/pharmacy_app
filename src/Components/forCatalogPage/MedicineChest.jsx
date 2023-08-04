@@ -16,7 +16,7 @@ export const MedicalChest = () => {
           <Text style={styles.buttonText}>На пляж</Text>
         </TouchableOpacity>
         <TouchableOpacity key={'4'} style={[styles.button, {backgroundColor: '#EE7414'}]}>
-          <Text style={styles.buttonText}>От поноса</Text>
+          <Text style={styles.buttonText}>Домой</Text>
         </TouchableOpacity>
     </ScrollView>
 
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
   sectionContainer: {
     marginVertical: 20,
     paddingHorizontal: 10,
-    height: 100,
+    height: 180,
   },
   button: {
     height: 53,

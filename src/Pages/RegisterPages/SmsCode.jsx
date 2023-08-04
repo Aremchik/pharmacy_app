@@ -12,17 +12,18 @@ export const SmsCode = () =>{
             </View>
             <View>
                 <Text style={{fontSize: 16, color: 'black', marginTop: '10%', marginLeft: 'auto', marginRight: 'auto', fontWeight: '500',}}>Мы отправили код по номеру</Text>
-                <View style={{justifyContent: 'space-between', flexDirection: 'row', marginLeft: 'auto', marginRight: 'auto',}}>
+                <Text  style={{fontSize: 12, color: '#525252', marginTop: '3%', marginLeft: 'auto', marginRight: 'auto', fontWeight: '500',}}>+7 (902) 763-95-12</Text>
+                <View style={{justifyContent: 'space-between', flexDirection: 'row', marginLeft: 'auto', marginRight: 'auto', marginTop: '6%'}}>
                     <TextInput placeholder={''} style={styles.input}/>
                     <TextInput placeholder={''} style={styles.input}/>
                     <TextInput placeholder={''} style={styles.input}/>
                     <TextInput placeholder={''} style={styles.input}/>
                 </View>
-                <Text style={{marginLeft: 'auto', marginRight: 'auto', color: 'rgba(151, 151, 151, 1)', marginTop: 1, fontSize: 14}}>Получить новый код можно через 0:20</Text>
+                <Text style={{marginLeft: 'auto', marginTop:'4%', marginRight: 'auto', color: 'rgba(151, 151, 151, 1)', fontSize: 14}}>Получить новый код можно через 0:20</Text>
             </View>
             <View>
                 <TouchableOpacity>
-                    <Text style={{marginTop: '90%', color: 'rgba(151, 151, 151, 1)', 
+                    <Text style={{marginTop: '92%', color: 'rgba(151, 151, 151, 1)', 
                     marginLeft: 'auto', marginRight: 'auto', fontSize: 16, fontWeight: '500'}}>Пропустить регистрацию</Text>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => navigation.navigate('CatalogScreen')}
@@ -41,12 +42,13 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
+        backgroundColor: 'white'
     },
     text:{
         fontSize: 25,
         fontWeight: '600',
         marginTop: 40,
-        marginLeft: '10%',
+        marginLeft: '6%',
         marginRight: 'auto',
         color: 'black',
     },
@@ -55,11 +57,9 @@ const styles = StyleSheet.create({
         marginRight: '5%'
     },
     input:{
-        width: 40,
-        height: 40,
-        borderWidth: 1,
-        color: 'black',
-        backgroundColor: 'rgba(242, 242, 242, 1)',
+        width: 50,
+        height: 50,
+        backgroundColor: '#F2F2F2',
         marginRight: '5%',
         borderRadius: 15,
         paddingLeft: 15,

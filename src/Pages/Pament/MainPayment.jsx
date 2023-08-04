@@ -6,8 +6,8 @@ import { useNavigation } from '@react-navigation/native';
 export const MainPayment = () =>{
     const navigation = useNavigation();
     return(
-        <SafeAreaView style={{width: '100%', height: '100%'}}>
-            <View style={{justifyContent: 'space-between', flexDirection: 'row'}}>
+        <SafeAreaView style={{width: '100%', height: '100%', backgroundColor: 'white'}}>
+            <View style={{justifyContent: 'space-between', flexDirection: 'row', marginTop: '2%'}}>
                 <TouchableOpacity onPress={() => navigation.navigate('Basket')}>
                 <Image style={{marginLeft: '3%'}} source={require('../../UI/img/back.png')}/>
                 </TouchableOpacity>
@@ -17,7 +17,7 @@ export const MainPayment = () =>{
             <TextInput style={styles.input} placeholder={'Имя и фамилия'}/>
             <TextInput style={styles.input} placeholder={'Номер телефона'}/>
             <TextInput style={styles.input} placeholder={'Email'}/>
-            <Text style={{fontSize: 16, fontWeight: '600', marginTop: 35, marginLeft: '5%',}}>Ваш заказ</Text>
+            <Text style={{fontSize: 16, fontWeight: '600', marginTop: 20, marginLeft: '5%',}}>Ваш заказ</Text>
 
             <View style={{marginLeft: 'auto', marginRight: 'auto', width: '90%', height: 'auto',
             marginTop: 10, backgroundColor: 'rgba(0, 0, 0, 0.03)', borderRadius: 15, padding: 15}}>
@@ -42,15 +42,22 @@ export const MainPayment = () =>{
                     color: 'rgba(145, 211, 55, 1)', fontWeight: '500', fontSize: 16,}}>Посмотреть состав заказа</Text>
                 </TouchableOpacity>
             </View>
-            <View style={{justifyContent: 'space-between', flexDirection: 'row', marginLeft: '10%', marginRight: '10%',}}>
+            <View style={{marginLeft:'5%'}}>
+                <Text style={{fontSize: 16, fontWeight: 'bold', marginTop: 15}}>Способы оплаты</Text>
+                <Text style={styles.textOpl}>Оплатить при получении</Text>
+                <Text style={styles.textOpl}>Оплатить картой онлайн</Text>
+            </View>
+            <View style={{marginTop: '5%'}}>
+            <View style={{justifyContent: 'space-between', flexDirection: 'row', marginLeft: '5%', marginRight: '5%', marginBottom: '3%'}}>
                 <Text style={{fontSize: 18}}>Стоимость заказа:</Text>
                 <Text style={{fontSize: 18, color: 'rgba(145, 211, 55, 1)'}}>150 ₽</Text>
             </View>
             <TouchableOpacity style={{borderRadius: 15, width: '95%', height: 50, marginLeft: 'auto', marginRight: 'auto',
-                borderWidth: 1, borderColor: 'rgba(145, 211, 55, 1)', marginTop: 20}}>
+                borderWidth: 1, backgroundColor: 'rgba(145, 211, 55, 1)', borderColor: 'rgba(145, 211, 55, 1)'}}>
                 <Text style={{marginTop: 'auto', marginBottom: 'auto', marginRight: 'auto', marginLeft: 'auto', 
-                color: 'rgba(151, 151, 151, 1)'}}>Оформить заказ</Text>
+                color: 'white', fontWeight: 'bold'}}>Оформить заказ</Text>
             </TouchableOpacity>
+            </View>
         </SafeAreaView>
     )
 }
@@ -64,5 +71,10 @@ const styles = StyleSheet.create({
         padding: 15,
         marginLeft: '5%',
         marginTop: 10
+    },
+    textOpl:{
+        fontSize: 14,
+        color: '#525252',
+        marginTop: '5%'
     }
 })

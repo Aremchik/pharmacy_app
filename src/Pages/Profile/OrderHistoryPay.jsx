@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity, Modal } from "react-native";
-import { Menu } from "../../Components/Menu/Menu";
 import { useNavigation } from '@react-navigation/native';
 import { ModalDelete } from "./ModalDeletePay/Modal";
 import { Order } from "./ModalOrder/Order";
@@ -29,7 +28,7 @@ export const OrderHistoryPay = () =>{
                 <TouchableOpacity onPress={() => navigation.navigate('MainProfile')}>
                     <Image source={require('../../UI/img/back.png')}/>
                 </TouchableOpacity>
-                <Text style={{marginRight: 'auto', marginLeft: '25%'}}>История заказов</Text>
+                <Text style={{marginRight: 'auto', marginLeft: '20%', fontSize: 20, fontWeight: 'bold'}}>История заказов</Text>
             </View>
 
             <View>
@@ -47,8 +46,6 @@ export const OrderHistoryPay = () =>{
                 <Order setmodal={setmodal} modal={modal}/>
                     
             </View>
-
-            <Menu/>
         </View>
     )
 }

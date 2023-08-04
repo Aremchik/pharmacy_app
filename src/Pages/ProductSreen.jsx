@@ -75,10 +75,10 @@ export const ProductSreen = () =>{
             <PopularProduct/>
             <Text style={[styles.blockName, {marginBottom: 10}]}>Форма выпуска</Text>
             <TouchableOpacity activeOpacity={1} style={styles.drop} onPress={() => {setIsExpanded(!isExpanded);}}>  
-                <Text style={{fontSize: 16, fontWeight:'bold'}}>Состав</Text>
+                <Text style={{fontSize: 16}}>Состав</Text>
             </TouchableOpacity>
             <ExpandableView expanded={!isExpanded}/>
-            <TouchableOpacity style={styles.chooseButton} onPress={() => navigation.navigate('CatalogScreen', {City: selectedCity})}>
+            <TouchableOpacity style={styles.chooseButton}>
                 <Text style={styles.buttonText}>Выбрать</Text>
             </TouchableOpacity>
         </ScrollView>

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, ScrollView, TouchableOpacity, Text, StyleSheet } from 'react-native';
+import { View, ScrollView, TouchableOpacity, Text, StyleSheet, Image } from 'react-native';
 import { PopularProduct } from '../Components/forCatalogPage/PopularProduct';
 import { Sections } from '../Components/forCatalogPage/Sections';
 import { Helpful } from '../Components/forCatalogPage/Helpful';
 import { MedicalChest } from '../Components/forCatalogPage/MedicineChest';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
-import { MenuCatalog } from '../Components/Menu/MenuCatalog';
 
 export const CatalogScreen = () => {
   const navigation = useNavigation();
@@ -33,7 +32,8 @@ export const CatalogScreen = () => {
 
       <View style={{alignItems: 'center', justifyContent: 'center'}}>
         <TouchableOpacity activeOpacity={1} style={styles.input} onPress={()=>navigation.navigate('Search')}>
-          <Text style={{color: '#979797',}}>Введите название лекарства или симптомов</Text>  
+          <Text style={{color: '#979797', }}>Введите название лекарства или симптомов</Text>  
+          <Image source={require('../UI/img/loupe.png')}/>
         </TouchableOpacity>
       </View>
 
@@ -78,8 +78,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
   input: {
+    flexDirection:'row',
     width: '90%',
     justifyContent: 'center',
+    alignItems: 'center',
     height: 40,
     marginTop: 15,
     borderRadius: 10,

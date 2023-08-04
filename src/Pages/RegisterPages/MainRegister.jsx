@@ -11,9 +11,9 @@ export const MainRegister = () =>{
                 <Image style={styles.img} source={require('../../UI/img/logoRegister.png')}/>
             </View>
             <View>
-                <Text style={{fontSize: 16, color: 'rgba(151, 151, 151, 1)', marginTop: '10%', marginLeft: '10%', fontWeight: '500',}}>Введите свой номер телефона</Text>
+                <Text style={{fontSize: 16, color: 'rgba(151, 151, 151, 1)', marginTop: '10%', marginLeft: '6%', fontWeight: '500',}}>Введите свой номер телефона</Text>
                 <TextInput placeholder={'+7'} style={styles.input}/>
-                <Text style={{marginLeft: '10%', marginRight: 'auto', color: 'rgba(151, 151, 151, 1)', marginTop: 1, fontSize: 14}}>Мы отправим код подтверждения на указанный вами номер</Text>
+                <Text style={{marginLeft: '6%', marginRight: 'auto', color: 'rgba(151, 151, 151, 1)', marginTop: 1, fontSize: 12}}>Мы отправим код подтверждения на указанный вами номер</Text>
             </View>
             <View>
                 <TouchableOpacity>
@@ -28,7 +28,7 @@ export const MainRegister = () =>{
                     marginBottom: 'auto',}}>Получить код по SMS</Text>
                 </TouchableOpacity>
                 <TouchableOpacity >
-                    <Text style={{width: '80%', color: 'black', fontSize: 14, fontWeight: '400', marginLeft: 'auto', marginRight: 'auto', marginTop: '5%'}}>
+                    <Text style={{width: '90%', color: 'black', textAlign: 'center', fontSize: 14, marginLeft: '4%', marginRight: '4%', marginTop: '3%'}}>
                         Нажимая на кнопку, я даю согласие на обработку персональных данных и подтверждаю, что ознакомлен с политикой конфиденцияльности.
                     </Text>
                 </TouchableOpacity>
@@ -41,12 +41,13 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
+        backgroundColor: 'white'
     },
     text:{
         fontSize: 25,
         fontWeight: '600',
         marginTop: 40,
-        marginLeft: '10%',
+        marginLeft: '6%',
         marginRight: 'auto',
         color: 'black',
     },
@@ -55,16 +56,15 @@ const styles = StyleSheet.create({
         marginRight: '5%'
     },
     input:{
-        width: '80%',
+        width: '90%',
         height: 40,
-        borderWidth: 1,
-        color: 'black',
-        backgroundColor: 'rgba(242, 242, 242, 1)',
-        marginLeft: '10%',
-        marginTop: 'auto',
-        marginBottom: 'auto',
-        borderRadius: 15,
-        paddingLeft: 15,
+        marginBottom: '3%',
+        marginTop: '3%',
+        borderRadius: 10,
+        backgroundColor: '#F2F2F2',
+        padding: 8,
+        marginLeft: 'auto',
+        marginRight: 'auto'
     },
     button:{
         width: '90%',

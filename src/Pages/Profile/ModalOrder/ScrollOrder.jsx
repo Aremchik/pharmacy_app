@@ -2,8 +2,8 @@ import React from "react";
 import { View, StyleSheet, Text, ScrollView, TouchableOpacity } from "react-native";
 export const ScrollOrder = () =>{
     return(
-        <View style={{width: '100%', marginTop: 10,}}>
-                <ScrollView horizontal={true} >
+        <View style={{width: '100%', marginTop: 10, marginLeft: 8}}>
+                <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
                     <View style={styles.containerPay}>
                         <Text style={{marginTop: 18, }}>Доставлено в пункт выдачи</Text>
                         <Text style={{color: 'rgba(151, 151, 151, 1)', fontSize: 12, marginTop: 5}}>Можно забрать до 25.12.2022</Text>
@@ -85,6 +85,8 @@ const styles = StyleSheet.create({
         marginLeft: 6.5,
         marginRight: 6.5,
         borderRadius: 15,
-        padding: 20
+        padding: 20,
+        borderColor: '#dbdbdb',
+        borderWidth: 1,
     }
 })

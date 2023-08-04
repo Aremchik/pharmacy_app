@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { View, StyleSheet, Text, Image, TouchableOpacity } from "react-native";
-import { Menu } from "../../Components/Menu/Menu";
 import { useNavigation } from '@react-navigation/native';
 
 export const OrderHistory = () =>{
@@ -11,7 +10,7 @@ export const OrderHistory = () =>{
                 <TouchableOpacity onPress={() => navigation.navigate('MainProfile')}>
                     <Image source={require('../../UI/img/back.png')}/>
                 </TouchableOpacity>
-                <Text style={{marginRight: 'auto', marginLeft: '25%'}}>История заказов</Text>
+                <Text style={{marginRight: 'auto', marginLeft: '20%', fontSize: 20, fontWeight: 'bold'}}>История заказов</Text>
             </View>
 
             <View>
@@ -53,7 +52,6 @@ export const OrderHistory = () =>{
                     
             </View>
 
-            <Menu/>
         </View>
     )
 }
