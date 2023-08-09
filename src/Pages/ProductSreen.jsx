@@ -3,6 +3,7 @@ import { Animated, View, Text, Image, StyleSheet, ScrollView, TouchableOpacity }
 import { PopularProduct } from "../Components/forCatalogPage/PopularProduct";
 import { ExpandableView } from '../Components/ExpandableView';
 import { useNavigation } from '@react-navigation/native';
+import { GreenLoveSvg } from '../UI/svg/GreenLoveSvg';
 
 export const ProductSreen = () =>{
     const navigation = useNavigation();
@@ -15,7 +16,7 @@ export const ProductSreen = () =>{
 
     return(
         <ScrollView style={styles.container}>
-            <View style={{flexDirection: 'row'}}>
+            <View style={{flexDirection: 'row', marginTop: 5}}>
                 <TouchableOpacity onPress={() => navigation.navigate('Search')}>
                     <Image
                     style={{marginLeft: '10%',}}
@@ -23,6 +24,9 @@ export const ProductSreen = () =>{
                     />
                 </TouchableOpacity>
                 <Text style={styles.headText}>Но-шпа</Text>
+                <View style={{marginLeft: 95, marginTop: 3}}>
+                        <GreenLoveSvg/>
+                    </View>
             </View>
             <View style={{alignItems: 'center'}}>
                 <Image
@@ -33,8 +37,7 @@ export const ProductSreen = () =>{
 
             <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
                 <Text style={styles.title}>Но-шпа</Text>
-                <Text style={styles.price}>от 150 ₽</Text>
-                
+                <Text style={styles.price}>от 150 ₽</Text> 
             </View>
             <Text style={styles.descr}>80 мг, таблетки, 24 шт</Text>
             <Text style={styles.production}>Сhinoin Pharmaceutical and Chemical Works Венгрия</Text>
@@ -96,7 +99,7 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         color: '#313133',
-        marginLeft: 120
+        marginLeft: 85
       },
     title:{
         fontSize: 25,

@@ -32,7 +32,7 @@ export const CatalogScreen = () => {
 
       <View style={{alignItems: 'center', justifyContent: 'center'}}>
         <TouchableOpacity activeOpacity={1} style={styles.input} onPress={()=>navigation.navigate('Search')}>
-          <Text style={{color: '#979797', }}>Введите название лекарства или симптомов</Text>  
+          <Text style={{color: '#979797', marginLeft: '3%'}}>Введите название лекарства или симптомов</Text>  
           <Image source={require('../UI/img/loupe.png')}/>
         </TouchableOpacity>
       </View>

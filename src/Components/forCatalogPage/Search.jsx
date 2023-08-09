@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Image, TouchableOpacity, View, Text, TextInput, ScrollView, FlatList, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { GreenLoveSvg } from '../../UI/svg/GreenLoveSvg';
 
 export const Search = () => {
 
@@ -96,10 +97,10 @@ export const Search = () => {
                         <Text style={styles.title}>{item.title}</Text>
                         <Text style={styles.description}>{item.description}</Text>
                     </View>
-                    <Image 
-                            style={{marginLeft: 40, marginTop: 6}}
-                            source={require('../../UI/img/lovePng.png')}
-                        />
+                    
+                    <View style={{marginLeft: 40, marginTop: 6}}>
+                        <GreenLoveSvg/>
+                    </View>
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 15}}>
                     <Text style={styles.price}>{item.price}</Text>
@@ -127,9 +128,9 @@ export const Search = () => {
                 <TextInput
                     onChangeText={setSearch}
                     value={search}
-                    placeholder="Введите название лекарства или симптома"
+                    placeholder="Введите название лекарства или симптомов"
                 />
-                <Image style={{marginLeft:10}}source={require('../../UI/img/loupe.png')}/>
+                <Image style={{marginLeft:2}}source={require('../../UI/img/loupe.png')}/>
             </View>
             <ScrollView
                 horizontal
@@ -139,7 +140,7 @@ export const Search = () => {
                 style={[styles.button,
                     { backgroundColor: selectedCategory === null ? '#91D337' : '#F2F2F2' },]}
                 onPress={() => handleButtonPress(null)}>
-            <Text style={styles.buttonText}>Все</Text>
+            <Text style={[styles.buttonText, {color: selectedCategory == null ? 'white' : '#525252'}]}>Все</Text>
             </TouchableOpacity>
 
             <TouchableOpacity
@@ -147,7 +148,7 @@ export const Search = () => {
                     { backgroundColor: selectedCategory === 'Аллергия' ? '#91D337' : '#F2F2F2' },
                 ]}
                 onPress={() => handleButtonPress('Аллергия')}>
-                <Text style={styles.buttonText}>Аллергия</Text>
+                <Text style={[styles.buttonText, {color: selectedCategory == 'Аллергия' ? 'white' : '#525252'}]}>Аллергия</Text>
             </TouchableOpacity>
             
             <TouchableOpacity
@@ -155,7 +156,7 @@ export const Search = () => {
                     { backgroundColor: selectedCategory === 'Боль, температура' ? '#91D337' : '#F2F2F2' },
                 ]}
                 onPress={() => handleButtonPress('Боль, температура')}>
-                <Text style={styles.buttonText}>Боль, температура</Text>
+                <Text style={[styles.buttonText, {color: selectedCategory == 'Боль, температура' ? 'white' : '#525252'}]}>Боль, температура</Text>
             </TouchableOpacity>
             
             <TouchableOpacity
@@ -163,7 +164,7 @@ export const Search = () => {
                     { backgroundColor: selectedCategory === 'Ухо, горло, нос' ? '#91D337' : '#F2F2F2' },
                 ]}
                 onPress={() => handleButtonPress('Ухо, горло, нос')}>
-                <Text style={styles.buttonText}>Ухо, горло, нос</Text>
+                <Text style={[styles.buttonText, {color: selectedCategory == 'Ухо, горло, нос' ? 'white' : '#525252'}]}>Ухо, горло, нос</Text>
             </TouchableOpacity>
 
             </ScrollView>
@@ -229,6 +230,7 @@ styles = StyleSheet.create({
         marginTop: 15,
         borderRadius: 10,
         backgroundColor: '#F2F2F2',
+        paddingLeft: '3%'
     },
     buttonContainer: {
         borderColor: '#dbdbdb',
@@ -255,6 +257,6 @@ styles = StyleSheet.create({
       },
     buttonText:{
         fontSize: 14,
-        color: '#525252'
+       
     },
 })

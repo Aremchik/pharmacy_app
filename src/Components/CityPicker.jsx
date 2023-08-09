@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, Alert } from 'react-native';
+import { View, Text, TextInput, FlatList, TouchableOpacity, StyleSheet, Alert, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -46,12 +46,14 @@ export const CityPicker = () => {
     return (
         <View style={styles.container}>
         <Text style={styles.texthead}>Выбор города</Text>
-        <TextInput
-            style={styles.input}
-            placeholder="Введите название города"
-            value={searchText}
-            onChangeText={setSearchText}
-        />
+        <View style={styles.input}>
+            <TextInput
+                placeholder="Введите название города"
+                value={searchText}
+                onChangeText={setSearchText}
+            /> 
+            <Image style={{marginLeft:2}} source={require('../UI/img/loupe.png')}/>
+        </View>
         <FlatList
             showsVerticalScrollIndicator={false}
             style={styles.cityList}
@@ -99,6 +101,10 @@ const styles = StyleSheet.create({
         marginTop: '3%',
         borderRadius: 10,
         backgroundColor: '#F2F2F2',
+        alignItems: 'center',
+        flexDirection: 'row',
+        padding: '3%',
+        justifyContent: 'space-between'
     },
     cityList: {
         width: '85%',

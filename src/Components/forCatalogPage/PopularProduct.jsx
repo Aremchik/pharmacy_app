@@ -1,5 +1,6 @@
 import React from "react";
 import { ScrollView, View, TouchableOpacity, StyleSheet, Text, Image } from "react-native";
+import { GreenLoveSvg } from "../../UI/svg/GreenLoveSvg";
 
 export const PopularProduct = () => {
 
@@ -16,13 +17,13 @@ export const PopularProduct = () => {
             <View style={{alignItems: 'center',}}>
             <View style={{flexDirection:'row'}}>
               <Image
-                  style={{width: 85.7, height: 50, marginLeft: 50, marginTop: '20%', marginBottom: '15%'}}
+                  style={{width: 85.7, height: 50, marginLeft: 45, marginTop: '20%', marginBottom: '15%'}}
                   source={require('../../UI/img/nurofenProd.png')}
               />
-              <Image 
-                          style={{marginRight: 30, marginTop: 6}}
-                          source={require('../../UI/img/lovePng.png')}
-                      />
+              <View style={{marginRight: 30, marginTop: 6}}>
+                <GreenLoveSvg/>
+              </View>
+                     
             </View>
             </View>
             <Text style={[styles.text, styles.buttonTitleText]}>{button.title}</Text>

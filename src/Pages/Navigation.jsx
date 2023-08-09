@@ -23,6 +23,7 @@ import { BasketSvg } from "../UI/svg/Basketsvg";
 import { CatalogSvg } from "../UI/svg/CatalogSvg";
 import { LoveSvg } from "../UI/svg/LoveSvg";
 import { ProfileSvg } from "../UI/svg/ProfileSvg";
+import { Favorites } from "./Favorites";
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -46,7 +47,7 @@ export const Menu = () =>{
                             <LoveSvg color={focused ? '#91D337' : '#979797'}/>
                     </View>
                 );
-            }}} name="Love" component={Love}/>
+            }}} name="Love" component={Favorites}/>
 
             <Tab.Screen options={{headerShown: false, tabBarIcon: ({focused,color}) => {
                 return(
