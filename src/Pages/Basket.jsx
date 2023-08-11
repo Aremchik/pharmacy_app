@@ -327,7 +327,7 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         justifyContent: 'center',
         alignItems: 'center',
-        marginLeft: 30
+        marginLeft: '6%'
     },
     totalPriceTextAptek:{
         color: 'rgba(145, 211, 55, 1)', 

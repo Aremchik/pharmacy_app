@@ -10,8 +10,6 @@ import { OrderHistoryPay } from "./Profile/OrderHistoryPay";
 import { CityPicker } from '../Components/CityPicker'
 import { CatalogScreen } from './CatalogScreen'
 import { Basket } from "./Basket";
-import { Love } from "./Love";
-import {Search} from "../Components/forCatalogPage/Search"
 import { MainRegister } from "./RegisterPages/MainRegister";
 import { SmsCode } from "./RegisterPages/SmsCode";
 import { MainPayment } from "./Pament/MainPayment";
@@ -23,7 +21,9 @@ import { BasketSvg } from "../UI/svg/Basketsvg";
 import { CatalogSvg } from "../UI/svg/CatalogSvg";
 import { LoveSvg } from "../UI/svg/LoveSvg";
 import { ProfileSvg } from "../UI/svg/ProfileSvg";
-import { Favorites } from "./Favorites";
+import { LoveScreen } from "./LoveScreen";
+import { SearchInput } from "../Components/forCatalogPage/SearchInput";
+
 
 const Stack = createNativeStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
@@ -47,7 +47,7 @@ export const Menu = () =>{
                             <LoveSvg color={focused ? '#91D337' : '#979797'}/>
                     </View>
                 );
-            }}} name="Love" component={Favorites}/>
+            }}} name="Love" component={LoveScreen }/>
 
             <Tab.Screen options={{headerShown: false, tabBarIcon: ({focused,color}) => {
                 return(
@@ -72,7 +72,6 @@ export const Navigation = () => {
   return (
     <NavigationContainer>
         <Stack.Navigator>
-           
           <Stack.Screen name="Page1" component={Page1} options={{headerShown: false}}/>
           <Stack.Screen name="Page2" component={Page2} options={{headerShown: false}}/>
           <Stack.Screen name="Page3" component={Page3} options={{headerShown: false}}/>
@@ -80,7 +79,7 @@ export const Navigation = () => {
           <Stack.Screen name="MainRegister" component={MainRegister} options={{headerShown: false}}/>
           <Stack.Screen name="CityPicker" component={CityPicker} options={{headerShown: false}}/>
         <Stack.Screen options={{headerShown: false}} name='Menu' component={Menu}/>
-          <Stack.Screen name="Search" component={Search} options={{headerShown: false}}/>
+          <Stack.Screen name="Search" component={SearchInput} options={{headerShown: false}}/>
           <Stack.Screen name="OrderHistory" component={OrderHistory} options={{headerShown: false}}/>
           <Stack.Screen name="OrderHistoryPay" component={OrderHistoryPay} options={{headerShown: false}}/>
           <Stack.Screen name="SmsCode" component={SmsCode} options={{headerShown: false}}/>

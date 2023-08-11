@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Image, TouchableOpacity, View, Text, TextInput, ScrollView, FlatList, StyleSheet } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-export const Love = () => {
+export const LoveScreen = () => {
   const navigation = useNavigation();
   const [search, setSearch] = useState('');
   

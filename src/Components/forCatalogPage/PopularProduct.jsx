@@ -1,19 +1,38 @@
-import React from "react";
+import React, { useState } from "react";
 import { ScrollView, View, TouchableOpacity, StyleSheet, Text, Image } from "react-native";
 import { GreenLoveSvg } from "../../UI/svg/GreenLoveSvg";
+import { useNavigation } from '@react-navigation/native';
 
 export const PopularProduct = () => {
-
+  const navigation = useNavigation();
     const PopularData = [
         { id: 1, title: 'Нурофен', description: 'таблетки 10 мг 30 шт', price: '150' },
         { id: 2, title: 'Кетонал', description: 'раствор 200 мл', price: '151' },
         { id: 3, title: 'Спазмалгон', description: 'таблетки, 20 шт', price: '152' },
       ];
+      const [selectedOptions, setSelectedOptions] = useState([]);
+
+      const handleOptionPress = (option) => {
+        if (selectedOptions.includes(option)) {
+          setSelectedOptions(selectedOptions.filter((item) => item !== option));
+        } else {
+          setSelectedOptions([...selectedOptions, option]);
+        }
+      };
+    
+      const isOptionSelected = (option) => {
+        return selectedOptions.includes(option);
+      };
+    
+      const getOptionTextStyle = (option) => {
+        return isOptionSelected(option) ? '#91D337'  : '#fff' ;
+      };
+    
 
     return(
         <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.sectionContainer}>
         {PopularData.map((button) => (
-          <TouchableOpacity key={button.id} style={styles.button}>
+          <TouchableOpacity key={button.id} style={styles.button} >
             <View style={{alignItems: 'center',}}>
             <View style={{flexDirection:'row'}}>
               <Image
@@ -21,7 +40,9 @@ export const PopularProduct = () => {
                   source={require('../../UI/img/nurofenProd.png')}
               />
               <View style={{marginRight: 30, marginTop: 6}}>
-                <GreenLoveSvg/>
+                <TouchableOpacity  style={[selectedOptions.includes(button.id)]} onPress={() => handleOptionPress(button.id)}>
+                  <GreenLoveSvg color={getOptionTextStyle(button.id)}/>
+                </TouchableOpacity>
               </View>
                      
             </View>

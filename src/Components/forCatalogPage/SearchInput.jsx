@@ -3,10 +3,10 @@ import { Image, TouchableOpacity, View, Text, TextInput, ScrollView, FlatList, S
 import { useNavigation } from '@react-navigation/native';
 import { GreenLoveSvg } from '../../UI/svg/GreenLoveSvg';
 
-export const Search = () => {
+export const SearchInput = () => {
 
   const allData = [
-    {
+    { 
       id: '1',
       title: 'Нош-па',
       price: 'от 120',
@@ -75,6 +75,23 @@ export const Search = () => {
   const navigation = useNavigation()
   const [search, setSearch] = useState('')
   const [selectedCategory, setSelectedCategory] = useState(null)
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+      const handleOptionPress = (option) => {
+        if (selectedOptions.includes(option)) {
+          setSelectedOptions(selectedOptions.filter((item) => item !== option));
+        } else {
+          setSelectedOptions([...selectedOptions, option]);
+        }
+      };
+    
+      const isOptionSelected = (option) => {
+        return selectedOptions.includes(option);
+      };
+    
+      const getOptionTextStyle = (option) => {
+        return isOptionSelected(option) ? '#91D337'  : '#fff' ;
+      };
   
   const handleButtonPress = (category) => {
     setSelectedCategory(category)
@@ -99,7 +116,9 @@ export const Search = () => {
                     </View>
                     
                     <View style={{marginLeft: 40, marginTop: 6}}>
-                        <GreenLoveSvg/>
+                    <TouchableOpacity  style={[selectedOptions.includes(item.id)]} onPress={() => handleOptionPress(item.id)}>
+                        <GreenLoveSvg color={getOptionTextStyle(item.id)}/>
+                    </TouchableOpacity>
                     </View>
                 </View>
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginTop: 15}}>

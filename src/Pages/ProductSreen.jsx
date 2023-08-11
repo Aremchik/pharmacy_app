@@ -9,6 +9,11 @@ export const ProductSreen = () =>{
     const navigation = useNavigation();
     const [isExpanded,setIsExpanded] = useState(false);
     const [selectedCategory, setSelectedCategory] = useState(null)
+    const [isPressed, setIsPressed] = useState(false);
+
+    const handlePress = () => {
+        setIsPressed(!isPressed);
+    };
   
     const handleButtonPress = (category) => {
         setSelectedCategory(category)
@@ -25,7 +30,9 @@ export const ProductSreen = () =>{
                 </TouchableOpacity>
                 <Text style={styles.headText}>Но-шпа</Text>
                 <View style={{marginLeft: 95, marginTop: 3}}>
-                        <GreenLoveSvg/>
+                    <TouchableOpacity onPress={handlePress}>
+                    <GreenLoveSvg color={isPressed ? '#91D337' : '#fff'}/>
+                    </TouchableOpacity>
                     </View>
             </View>
             <View style={{alignItems: 'center'}}>
